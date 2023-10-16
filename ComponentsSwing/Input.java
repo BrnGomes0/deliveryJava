@@ -5,10 +5,9 @@ import java.awt.*;
 
 public class Input extends JTextField {
     // Creating a constructor
-    public Input(String text, int x, int y, int width, int height){
-        setText(text);
+    public Input(int x, int y, int width, int height){
         setBounds(x, y, width, height);
         setBorder(null);
-        setFont(new Font("Arial", Font.ITALIC, 16));
+        setFont(new Font("Arial", Font.PLAIN, 16));
     }
 }

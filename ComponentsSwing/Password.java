@@ -8,6 +8,6 @@ public class Password extends JPasswordField {
     public Password(int x, int y, int width, int height){
         setBounds(x, y, width, height);
         setBorder(null);
-        setFont(new Font("Arial", Font.ITALIC, 16));
+        setFont(new Font("Arial", Font.PLAIN, 16));
     }
 }
