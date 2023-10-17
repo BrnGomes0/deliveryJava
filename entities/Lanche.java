@@ -1,3 +1,5 @@
+package entities;
+
 public class Lanche {
     // Attributes
     private String name;
