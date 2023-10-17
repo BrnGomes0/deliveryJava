@@ -1,9 +1,9 @@
 package Screens;
 
-import javax.swing.*;
+import ComponentsSwing.*;
 
-public class ScreenRegisterRestaurant extends JFrame {
-    public ScreenRegisterRestaurant(Boolean visibility){
-        setVisible(visibility);
-    }
+public class ScreenRegisterRestaurant {
+    // Creating a constructor
+
+
 }

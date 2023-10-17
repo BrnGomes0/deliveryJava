@@ -4,6 +4,8 @@ public class Usuario {
     private String adress;
     private double cpf;
 
+    private String password;
+
     // Creating a GET and SET
     public String getName(){
         return name;
@@ -14,6 +16,9 @@ public class Usuario {
     public double getCpf(){
         return cpf;
     }
+    public String getPassword(){
+        return password;
+    }
     public void setName(String name){
         this.name = name;
     }
@@ -22,6 +27,9 @@ public class Usuario {
     }
     public void setCpf(double cpf){
         this.cpf = cpf;
+    }
+    public void setPassWord(String password){
+        this.password = password;
     }
 
 }

@@ -1,8 +1,8 @@
-import ComponentsSwing.*;
-import Screens.ScreenLogin;
+import ComponentsSwing.Button;
+import Screens.HomeScreen;
 
 public class Main {
     public static void main(String[] args){
-        ScreenLogin screenLogin = new ScreenLogin();
+        HomeScreen homeScreen = new HomeScreen(true);
     }
 }
