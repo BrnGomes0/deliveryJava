@@ -46,6 +46,8 @@ public class ScreenRegisterUser {
                         Double.parseDouble(inputCPF.getText()),
                         String.valueOf(inputPassword.getPassword())
                 );
+                ArrayList<Usuario> usuarios = Aplicativo.getListUser();
+                usuarios.add(userUser);
                 JOptionPane.showMessageDialog(null, "Successfully registered", "Alert", JOptionPane.INFORMATION_MESSAGE);
                 HomeScreen homeScreen = new HomeScreen(true);
                 screenRegisterUser.dispose();

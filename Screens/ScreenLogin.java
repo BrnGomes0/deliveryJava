@@ -30,10 +30,14 @@ public class ScreenLogin {
             HomeScreen homeScreen = new HomeScreen(true);
         });
         btnLogin.addActionListener(e -> {
+            ArrayList<Usuario> usuarios = Aplicativo.getListUser();
             if(inputName.getText().isEmpty() || String.valueOf(inputPassword.getPassword()).isEmpty()){
                 JOptionPane.showMessageDialog(null, "Insert the values in Input", "Alert", JOptionPane.ERROR_MESSAGE);
-            }else{
-                JOptionPane.showMessageDialog(null, "Logged in successfully", "Alert", JOptionPane.INFORMATION_MESSAGE);
+            }
+            else if (usuarios.get(0).getName().equals(inputName.getText()) && usuarios.get(0).getPassword().equals(String.valueOf(inputPassword.getPassword()))){
+                JOptionPane.showMessageDialog(null, "Successful login", "Alert", JOptionPane.INFORMATION_MESSAGE);
+                UserPlace userPlace = new UserPlace(true);
+                screenLogin.dispose();
             }
         });
     }

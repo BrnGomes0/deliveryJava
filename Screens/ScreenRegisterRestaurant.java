@@ -1,9 +1,12 @@
 package Screens;
 
 import ComponentsSwing.*;
+import entities.Aplicativo;
+import entities.Restaurante;
 import entities.Usuario;
 
 import javax.swing.*;
+import java.util.ArrayList;
 
 public class ScreenRegisterRestaurant {
     // Creating a constructor
@@ -37,13 +40,15 @@ public class ScreenRegisterRestaurant {
             if(inputName.getText().isEmpty() || inputCPF.getText().isEmpty() || inputAxleX.getText().isEmpty() || inputAxleY.getText().isEmpty() || String.valueOf(inputPassword.getPassword()).isEmpty()){
                 JOptionPane.showMessageDialog(null, "Insert the values in Input", "Alert", JOptionPane.ERROR_MESSAGE);
             }else{
-                Usuario userRestaurant = new Usuario(
+                Restaurante userRestaurant = new Restaurante(
                         inputName.getText(),
                         Integer.parseInt(inputAxleX.getText()),
                         Integer.parseInt(inputAxleY.getText()),
                         Double.parseDouble(inputCPF.getText()),
                         String.valueOf(inputPassword.getPassword())
                 );
+                ArrayList<Restaurante> restaurantes = Aplicativo.getListRest();
+                restaurantes.add(userRestaurant);
                 JOptionPane.showMessageDialog(null, "Successfully registered", "Alert", JOptionPane.INFORMATION_MESSAGE);
                 HomeScreen homeScreen = new HomeScreen(true);
                 screenRegisterRestaurant.dispose();
