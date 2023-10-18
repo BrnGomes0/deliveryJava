@@ -4,13 +4,15 @@ import ComponentsSwing.*;
 import javax.swing.*;
 import entities.*;
 
+import java.util.ArrayList;
+
 public class ScreenRegisterUser {
     private Usuario userUser;
     // Creating a constructor
     public ScreenRegisterUser(Boolean visibility){
         Window screenRegisterUser = new Window("Screen Register User");
         Label image = new Label(0,0,500, 480);
-        image.setIcon(new ImageIcon("C://Users//dsadm//Desktop//javaApp//deliveryJava//img//frame_registeruser.png"));
+        image.setIcon(new ImageIcon("C://Users//ct67ca//Desktop//javaProject//deliveryJava//img//frame_registeruser.png"));
         Input inputName = new Input(116, 111, 275, 38);
         Input inputCPF = new Input(116, 166, 275, 38);
         Password inputPassword = new Password(116, 222, 275, 38);
@@ -34,16 +36,20 @@ public class ScreenRegisterUser {
             HomeScreen homeScreen = new HomeScreen(true);
         });
         btnRegister.addActionListener(e -> {
-            userUser = new Usuario(
-                    inputName.getText(),
-                    Integer.parseInt(inputAxleX.getText()),
-                    Integer.parseInt(inputAxleY.getText()),
-                    Double.parseDouble(inputCPF.getText()),
-                    String.valueOf(inputPassword.getPassword())
-                    );
-            Alert alertRegistred = new Alert("Successfully registered!", "Alert");
-            HomeScreen homeScreen = new HomeScreen(true);
-            screenRegisterUser.dispose();
+            if(inputName.getText().isEmpty() || inputCPF.getText().isEmpty() || inputAxleX.getText().isEmpty() || inputAxleY.getText().isEmpty() || String.valueOf(inputPassword.getPassword()).isEmpty()){
+                JOptionPane.showMessageDialog(null, "Insert the values in Input", "Alert", JOptionPane.ERROR_MESSAGE);
+            }else{
+                userUser = new Usuario(
+                        inputName.getText(),
+                        Integer.parseInt(inputAxleX.getText()),
+                        Integer.parseInt(inputAxleY.getText()),
+                        Double.parseDouble(inputCPF.getText()),
+                        String.valueOf(inputPassword.getPassword())
+                );
+                JOptionPane.showMessageDialog(null, "Successfully registered", "Alert", JOptionPane.INFORMATION_MESSAGE);
+                HomeScreen homeScreen = new HomeScreen(true);
+                screenRegisterUser.dispose();
+            }
         });
 
     }

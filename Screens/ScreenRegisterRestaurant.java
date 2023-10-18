@@ -10,7 +10,7 @@ public class ScreenRegisterRestaurant {
     public ScreenRegisterRestaurant(Boolean visibility){
         Window screenRegisterRestaurant = new Window("Screen Register Restaurant");
         Label image = new Label(0,0,500, 480);
-        image.setIcon(new ImageIcon("C://Users//dsadm//Desktop//javaApp//deliveryJava//img//frame_registerrestaurant.png"));
+        image.setIcon(new ImageIcon("C://Users//ct67ca//Desktop//javaProject//deliveryJava//img//frame_registerrestaurant.png"));
         Input inputName = new Input(116, 111, 275, 38);
         Input inputCPF = new Input(116, 166, 275, 38);
         Password inputPassword = new Password(116, 222, 275, 38);
@@ -34,21 +34,20 @@ public class ScreenRegisterRestaurant {
             HomeScreen homeScreen = new HomeScreen(true);
         });
         btnRegister.addActionListener(e -> {
-            Usuario userRestaurant = new Usuario(
-                    inputName.getText(),
-                    Integer.parseInt(inputAxleX.getText()),
-                    Integer.parseInt(inputAxleY.getText()),
-                    Double.parseDouble(inputCPF.getText()),
-                    String.valueOf(inputPassword.getPassword())
-            );
-            System.out.println(userRestaurant.getCpf());
-            System.out.println(userRestaurant.getName());
-            System.out.println(userRestaurant.getY());
-            System.out.println(userRestaurant.getX());
-            System.out.println(userRestaurant.getPassword());
-            Alert alertRegistred = new Alert("Successfully registered!", "Alert");
-            HomeScreen homeScreen = new HomeScreen(true);
-            screenRegisterRestaurant.dispose();
+            if(inputName.getText().isEmpty() || inputCPF.getText().isEmpty() || inputAxleX.getText().isEmpty() || inputAxleY.getText().isEmpty() || String.valueOf(inputPassword.getPassword()).isEmpty()){
+                JOptionPane.showMessageDialog(null, "Insert the values in Input", "Alert", JOptionPane.ERROR_MESSAGE);
+            }else{
+                Usuario userRestaurant = new Usuario(
+                        inputName.getText(),
+                        Integer.parseInt(inputAxleX.getText()),
+                        Integer.parseInt(inputAxleY.getText()),
+                        Double.parseDouble(inputCPF.getText()),
+                        String.valueOf(inputPassword.getPassword())
+                );
+                JOptionPane.showMessageDialog(null, "Successfully registered", "Alert", JOptionPane.INFORMATION_MESSAGE);
+                HomeScreen homeScreen = new HomeScreen(true);
+                screenRegisterRestaurant.dispose();
+            }
         });
     }
 }
