@@ -1,6 +1,7 @@
 package Screens;
 
 import ComponentsSwing.*;
+import entities.Restaurante;
 import entities.Usuario;
 import entities.Aplicativo;
 
@@ -12,7 +13,7 @@ public class ScreenLogin {
     public ScreenLogin(Boolean visibility){
         Window screenLogin = new Window("Screen Login");
         Label image = new Label(0,0,500, 480);
-        image.setIcon(new ImageIcon("C://Users//ct67ca//Desktop//javaProject//deliveryJava//img//frame_screenlogin.png"));
+        image.setIcon(new ImageIcon("C://Users//dsadm//Desktop//delivery//deliveryJava//img//frame_screenlogin.png"));
         Input inputName = new Input(116, 157, 275, 38);
         Password inputPassword = new Password(116, 224, 275, 38);
         Button btnLogin = new Button("Login", 174, 325, 159, 41);
@@ -31,6 +32,7 @@ public class ScreenLogin {
         });
         btnLogin.addActionListener(e -> {
             ArrayList<Usuario> usuarios = Aplicativo.getListUser();
+            ArrayList<Restaurante> restaurantes = Aplicativo.getListRest();
             if(inputName.getText().isEmpty() || String.valueOf(inputPassword.getPassword()).isEmpty()){
                 JOptionPane.showMessageDialog(null, "Insert the values in Input", "Alert", JOptionPane.ERROR_MESSAGE);
             }
@@ -38,7 +40,14 @@ public class ScreenLogin {
                 JOptionPane.showMessageDialog(null, "Successful login", "Alert", JOptionPane.INFORMATION_MESSAGE);
                 UserPlace userPlace = new UserPlace(true);
                 screenLogin.dispose();
+            } else if (!usuarios.get(0).getName().equals(inputName.getText()) && !usuarios.get(0).getPassword().equals(String.valueOf(inputPassword.getPassword()))) {
+                JOptionPane.showMessageDialog(null, "Incorrect password or username", "Alert", JOptionPane.ERROR_MESSAGE);
+            } else if (restaurantes.get(0).getName().equals(inputName.getText()) && restaurantes.get(0).getPassword().equals(String.valueOf(inputPassword.getPassword()))) {
+                JOptionPane.showMessageDialog(null, "Successful login", "Alert", JOptionPane.INFORMATION_MESSAGE);
+                RestaurantPlace restaurantPlace = new RestaurantPlace(true);
+                screenLogin.dispose();
             }
+
         });
     }
 }

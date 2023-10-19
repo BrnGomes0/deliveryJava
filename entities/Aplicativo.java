@@ -15,16 +15,9 @@ public class Aplicativo {
     public static ArrayList<Restaurante> getListRest(){
         return restaurantes;
     }
-    public static ArrayList<Pedido> getListPedido(){
+    public static ArrayList<Pedido> getListPedido() {
         return pedidos;
 
-    // Necessary Methods
-    public void cadastrarRestaurante(){
-
+        // Necessary Methods
     }
-
-    public void cadastrarUsuario(){
-
-    }
-
 }

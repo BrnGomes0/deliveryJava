@@ -9,11 +9,12 @@ import javax.swing.*;
 import java.util.ArrayList;
 
 public class ScreenRegisterRestaurant {
+    private Restaurante userRestaurant;
     // Creating a constructor
     public ScreenRegisterRestaurant(Boolean visibility){
         Window screenRegisterRestaurant = new Window("Screen Register Restaurant");
         Label image = new Label(0,0,500, 480);
-        image.setIcon(new ImageIcon("C://Users//ct67ca//Desktop//javaProject//deliveryJava//img//frame_registerrestaurant.png"));
+        image.setIcon(new ImageIcon("C://Users//dsadm//Desktop//delivery//deliveryJava//img//frame_registerrestaurant.png"));
         Input inputName = new Input(116, 111, 275, 38);
         Input inputCPF = new Input(116, 166, 275, 38);
         Password inputPassword = new Password(116, 222, 275, 38);
@@ -40,7 +41,7 @@ public class ScreenRegisterRestaurant {
             if(inputName.getText().isEmpty() || inputCPF.getText().isEmpty() || inputAxleX.getText().isEmpty() || inputAxleY.getText().isEmpty() || String.valueOf(inputPassword.getPassword()).isEmpty()){
                 JOptionPane.showMessageDialog(null, "Insert the values in Input", "Alert", JOptionPane.ERROR_MESSAGE);
             }else{
-                Restaurante userRestaurant = new Restaurante(
+                 userRestaurant = new Restaurante(
                         inputName.getText(),
                         Integer.parseInt(inputAxleX.getText()),
                         Integer.parseInt(inputAxleY.getText()),
