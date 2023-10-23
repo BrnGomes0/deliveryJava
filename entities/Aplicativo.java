@@ -8,6 +8,8 @@ public class Aplicativo {
     private static ArrayList<Restaurante> restaurantes = new ArrayList<>();
     private static ArrayList<Pedido> pedidos = new ArrayList<>();
 
+    private static ArrayList<Lanche> lanches = new ArrayList<>();
+
     // Creating a GET and SET
     public static ArrayList<Usuario> getListUser(){
         return usuarios;
@@ -17,7 +19,15 @@ public class Aplicativo {
     }
     public static ArrayList<Pedido> getListPedido() {
         return pedidos;
-
-        // Necessary Methods
+    }
+    public static ArrayList<Lanche> getListLanches(){
+        return lanches;
+    }
+    // Necessary Methods
+    public void registerRestaurant(){
+        System.out.println("Restaurant registred!");
+    }
+    public void registerUser(){
+        System.out.println("User registred!");
     }
 }

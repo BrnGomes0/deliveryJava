@@ -12,7 +12,7 @@ public class ScreenRegisterUser {
     public ScreenRegisterUser(Boolean visibility){
         Window screenRegisterUser = new Window("Screen Register User");
         Label image = new Label(0,0,500, 480);
-        image.setIcon(new ImageIcon("C://Users//dsadm//Desktop//delivery//deliveryJava//img//frame_registeruser.png"));
+        image.setIcon(new ImageIcon("C://Users//dsadm//Desktop//deliveryJava//deliveryJava//img//frame_registeruser.png"));
         Input inputName = new Input(116, 111, 275, 38);
         Input inputCPF = new Input(116, 166, 275, 38);
         Password inputPassword = new Password(116, 222, 275, 38);
@@ -48,7 +48,7 @@ public class ScreenRegisterUser {
                 );
                 ArrayList<Usuario> usuarios = Aplicativo.getListUser();
                 usuarios.add(userUser);
-                JOptionPane.showMessageDialog(null, "Successfully registered", "Alert", JOptionPane.INFORMATION_MESSAGE);
+                JOptionPane.showMessageDialog(null, "Successfully user registered", "Alert", JOptionPane.INFORMATION_MESSAGE);
                 HomeScreen homeScreen = new HomeScreen(true);
                 screenRegisterUser.dispose();
             }

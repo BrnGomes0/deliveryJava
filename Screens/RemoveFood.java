@@ -12,7 +12,7 @@ public class RemoveFood {
     public RemoveFood(boolean visibility){
         Window removeFood = new Window("Add To Cart");
         Label image = new Label(0,0,500, 480);
-        image.setIcon(new ImageIcon("C://Users//dsadm//Desktop//delivery//deliveryJava//img//frame_removefood.png"));
+        image.setIcon(new ImageIcon("C://Users//dsadm//Desktop//deliveryJava//deliveryJava//img//frame_removefood.png"));
         Input inputId = new Input(112, 157, 275, 38);
         Button btnRemoveFood = new Button("Remove", 170, 255, 159, 41);
         removeFood.add(btnRemoveFood);

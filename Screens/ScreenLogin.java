@@ -13,7 +13,7 @@ public class ScreenLogin {
     public ScreenLogin(Boolean visibility){
         Window screenLogin = new Window("Screen Login");
         Label image = new Label(0,0,500, 480);
-        image.setIcon(new ImageIcon("C://Users//dsadm//Desktop//delivery//deliveryJava//img//frame_screenlogin.png"));
+        image.setIcon(new ImageIcon("C://Users//dsadm//Desktop//deliveryJava//deliveryJava//img//frame_screenlogin.png"));
         Input inputName = new Input(116, 157, 275, 38);
         Password inputPassword = new Password(116, 224, 275, 38);
         Button btnLogin = new Button("Login", 174, 325, 159, 41);
@@ -35,19 +35,23 @@ public class ScreenLogin {
             ArrayList<Restaurante> restaurantes = Aplicativo.getListRest();
             if(inputName.getText().isEmpty() || String.valueOf(inputPassword.getPassword()).isEmpty()){
                 JOptionPane.showMessageDialog(null, "Insert the values in Input", "Alert", JOptionPane.ERROR_MESSAGE);
+            } else if (!usuarios.isEmpty()) {
+                if(usuarios.get(0).getName().equals(inputName.getText()) && usuarios.get(0).getPassword().equals(String.valueOf(inputPassword.getPassword()))){
+                    JOptionPane.showMessageDialog(null, "Successful login User", "Alert", JOptionPane.INFORMATION_MESSAGE);
+                    UserPlace userPlace = new UserPlace(true);
+                    screenLogin.dispose();
+                }else {
+                    JOptionPane.showMessageDialog(null, "Incorrect password or username", "Alert", JOptionPane.ERROR_MESSAGE);
+                }
+            }else if(!restaurantes.isEmpty()){
+                if(restaurantes.get(0).getName().equals(inputName.getText()) && restaurantes.get(0).getPassword().equals(String.valueOf(inputPassword.getPassword()))){
+                    JOptionPane.showMessageDialog(null, "Successful login Restaurant", "Alert", JOptionPane.INFORMATION_MESSAGE);
+                    RestaurantPlace restaurantPlace = new RestaurantPlace(true);
+                    screenLogin.dispose();
+                }else{
+                    JOptionPane.showMessageDialog(null, "Incorrect password or username", "Alert", JOptionPane.ERROR_MESSAGE);
+                }
             }
-            else if (usuarios.get(0).getName().equals(inputName.getText()) && usuarios.get(0).getPassword().equals(String.valueOf(inputPassword.getPassword()))){
-                JOptionPane.showMessageDialog(null, "Successful login", "Alert", JOptionPane.INFORMATION_MESSAGE);
-                UserPlace userPlace = new UserPlace(true);
-                screenLogin.dispose();
-            } else if (!usuarios.get(0).getName().equals(inputName.getText()) && !usuarios.get(0).getPassword().equals(String.valueOf(inputPassword.getPassword()))) {
-                JOptionPane.showMessageDialog(null, "Incorrect password or username", "Alert", JOptionPane.ERROR_MESSAGE);
-            } else if (restaurantes.get(0).getName().equals(inputName.getText()) && restaurantes.get(0).getPassword().equals(String.valueOf(inputPassword.getPassword()))) {
-                JOptionPane.showMessageDialog(null, "Successful login", "Alert", JOptionPane.INFORMATION_MESSAGE);
-                RestaurantPlace restaurantPlace = new RestaurantPlace(true);
-                screenLogin.dispose();
-            }
-
         });
     }
 }

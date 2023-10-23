@@ -14,7 +14,7 @@ public class ScreenRegisterRestaurant {
     public ScreenRegisterRestaurant(Boolean visibility){
         Window screenRegisterRestaurant = new Window("Screen Register Restaurant");
         Label image = new Label(0,0,500, 480);
-        image.setIcon(new ImageIcon("C://Users//dsadm//Desktop//delivery//deliveryJava//img//frame_registerrestaurant.png"));
+        image.setIcon(new ImageIcon("C://Users//dsadm//Desktop//deliveryJava//deliveryJava//img//frame_registerrestaurant.png"));
         Input inputName = new Input(116, 111, 275, 38);
         Input inputCPF = new Input(116, 166, 275, 38);
         Password inputPassword = new Password(116, 222, 275, 38);
@@ -50,7 +50,7 @@ public class ScreenRegisterRestaurant {
                 );
                 ArrayList<Restaurante> restaurantes = Aplicativo.getListRest();
                 restaurantes.add(userRestaurant);
-                JOptionPane.showMessageDialog(null, "Successfully registered", "Alert", JOptionPane.INFORMATION_MESSAGE);
+                JOptionPane.showMessageDialog(null, "Successfully restaurant registered", "Alert", JOptionPane.INFORMATION_MESSAGE);
                 HomeScreen homeScreen = new HomeScreen(true);
                 screenRegisterRestaurant.dispose();
             }

@@ -5,6 +5,12 @@ public class Lanche {
     private String name;
     private double price;
 
+    // Creating a constructor
+    public Lanche(String nameParameter, double priceParameter){
+        this.name = nameParameter;
+        this.price = priceParameter;
+    }
+
     // Creating a GET and SET
     public String getName(){
         return name;

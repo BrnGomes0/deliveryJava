@@ -49,4 +49,14 @@ public class Restaurante {
     public void setPassword(String password){
         this.password = password;
     }
+    // Necessary Mehods
+    public void printMenu(){
+        System.out.println("Print Menu!");
+    }
+    public void addFood(){
+        System.out.println("Added food!");
+    }
+    public void removeFood(){
+        System.out.println("Removed food");
+    }
 }
