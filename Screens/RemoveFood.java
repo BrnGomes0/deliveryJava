@@ -43,5 +43,9 @@ public class RemoveFood {
             System.out.println("**************************");
             System.out.println("\n");
         });
+        btnBack.addActionListener(e -> {
+            RestaurantPlace restaurantPlace = new RestaurantPlace(true);
+            removeFood.dispose();
+        });
     }
 }

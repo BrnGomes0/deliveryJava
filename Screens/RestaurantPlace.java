@@ -15,6 +15,8 @@ public class RestaurantPlace {
         Button btnAddFood = new Button("Add food", 133, 137, 233, 53);
         Button btnShowMenu = new Button("Show Menu", 133, 229, 233, 53);
         Button btnRemoveFood = new Button("Remove Food", 133, 321, 233, 53);
+        Button btnBack = new Button("<", 400, 16, 56, 56);
+        restaurantPlace.add(btnBack);
         restaurantPlace.add(btnAddFood);
         restaurantPlace.add(btnShowMenu);
         restaurantPlace.add(btnRemoveFood);
@@ -31,6 +33,10 @@ public class RestaurantPlace {
         });
         btnShowMenu.addActionListener(e -> {
             ShowMenu showMenu = new ShowMenu(true);
+            restaurantPlace.dispose();
+        });
+        btnBack.addActionListener(e -> {
+            HomeScreen homeScreen = new HomeScreen(true);
             restaurantPlace.dispose();
         });
     }

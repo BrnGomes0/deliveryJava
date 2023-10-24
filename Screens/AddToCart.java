@@ -4,8 +4,12 @@ import ComponentsSwing.Button;
 import ComponentsSwing.Input;
 import ComponentsSwing.Label;
 import ComponentsSwing.Window;
+import entities.Aplicativo;
+import entities.CalculateResult;
+import entities.Lanche;
 
 import javax.swing.*;
+import java.util.ArrayList;
 
 public class AddToCart {
     // Creating a constructor
@@ -28,6 +32,11 @@ public class AddToCart {
         btnBack.addActionListener(e -> {
             UserPlace userPlace = new UserPlace(true);
             addToCart.dispose();
+        });
+        btnAddToCart.addActionListener(e -> {
+            ArrayList<Lanche> lanche = Aplicativo.getListLanches();
+            int price = (int) lanche.get(Integer.parseInt(String.valueOf(foodId.getText()))).getPrice();
+            System.out.println(price);
         });
     }
 }

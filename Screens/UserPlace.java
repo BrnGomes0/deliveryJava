@@ -15,6 +15,8 @@ public class UserPlace {
         Button btnAddToCart = new Button("Add to Cart", 133, 137, 233, 53);
         Button btnShowMenu = new Button("Show menu", 133, 229, 233, 53);
         Button btnFinishOrder = new Button("Finish Order", 133, 321, 233, 53);
+        Button btnBack = new Button("<", 400, 16, 56, 56);
+        userPlace.add(btnBack);
         userPlace.add(btnAddToCart);
         userPlace.add(btnShowMenu);
         userPlace.add(btnFinishOrder);
@@ -32,6 +34,10 @@ public class UserPlace {
         });
         btnShowMenu.addActionListener(e -> {
             ShowMenu showMenu = new ShowMenu(true);
+        });
+        btnBack.addActionListener(e -> {
+            HomeScreen homeScreen = new HomeScreen(true);
+            userPlace.dispose();
         });
 
     }
