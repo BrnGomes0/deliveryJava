@@ -36,6 +36,8 @@ public class AddFood {
         btnAddFood.addActionListener(e -> {
             ArrayList<Lanche> lanche = Aplicativo.getListLanches();
             Lanche lancheOne = new Lanche(name.getText(), Double.parseDouble(price.getText()));
+            lanche.add(lancheOne);
+            System.out.println("Food added!" + " Name: " + lancheOne.getName() + " Price: " + lancheOne.getPrice());
         });
     }
 }
