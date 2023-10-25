@@ -18,7 +18,7 @@ public class ShowMenu {
     public ShowMenu(Boolean visibility){
         Window showMenu = new Window("Show Menu");
         Label image = new Label(0,0,500, 480);
-        image.setIcon(new ImageIcon("C://Users//dsadm//Desktop//deliveryJava//deliveryJava//img//frame_screenshowmenu.png"));
+        image.setIcon(new ImageIcon("C://Users//ct67ca//Desktop//javaDelivert//deliveryJava//img//frame_screenshowmenu.png"));
         Button btnShowMenu = new Button("Show Menu", 133, 213, 233, 53);
         Button btnBack = new Button("<", 400, 16, 56, 56);
 
