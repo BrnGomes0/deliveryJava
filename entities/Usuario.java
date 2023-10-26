@@ -5,12 +5,12 @@ public class Usuario {
     private String name;
     private int x;
     private int y;
-    private double cpf;
+    private int cpf;
 
     private String password;
 
     // Creating a constructor
-    public Usuario(String name, int x, int y, double cpf, String password){
+    public Usuario(String name, int x, int y, int cpf, String password){
         this.name = name;
         this.x = x;
         this.y = y;
@@ -28,7 +28,7 @@ public class Usuario {
     public int getY(){
         return y;
     }
-    public double getCpf(){
+    public int getCpf(){
         return cpf;
     }
     public String getPassword(){
@@ -43,7 +43,7 @@ public class Usuario {
     public void setY(int y){
         this.y = y;
     }
-    public void setCpf(double cpf){
+    public void setCpf(int cpf){
         this.cpf = cpf;
     }
     public void setPassword(String password){

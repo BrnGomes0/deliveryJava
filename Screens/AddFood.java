@@ -16,7 +16,7 @@ public class AddFood {
     public AddFood(boolean visibility){
         Window addFood = new Window("Add To Cart");
         Label image = new Label(0,0,500, 480);
-        image.setIcon(new ImageIcon("C://Users//ct67ca//Desktop//javaDelivert//deliveryJava//img//frame_addfood.png"));
+        image.setIcon(new ImageIcon("C://Users//dsadm//Desktop//javaDelivery//deliveryJava//img//frame_addfood.png"));
         Input name = new Input(112, 157, 275, 38);
         Input price = new Input(112, 221, 275,38);
         Button btnAddFood = new Button("Add Food", 170,321, 159, 41);

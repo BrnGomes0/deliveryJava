@@ -16,7 +16,7 @@ public class FinishOrder {
     public FinishOrder(boolean visibility){
         Window screenFinishOrder = new Window("Finish Order");
         Label image = new Label(0,0,500, 480);
-        image.setIcon(new ImageIcon("C://Users//ct67ca//Desktop//javaDelivert//deliveryJava//img//frame_finishorder.png"));
+        image.setIcon(new ImageIcon("C://Users//dsadm//Desktop//javaDelivery//deliveryJava//img//frame_finishorder.png"));
         Button btnFinishOrder = new Button("Finish Order", 133, 213, 233, 53);
         Button btnBack = new Button("<", 400, 16, 56, 56);
         screenFinishOrder.add(btnBack);
@@ -31,9 +31,8 @@ public class FinishOrder {
         });
         btnFinishOrder.addActionListener(e -> {
             ArrayList<Usuario> users = Aplicativo.getListUser();
-            ArrayList<Lanche> lanches = Aplicativo.getListLanches();
             CalculateResult calculateResult = new CalculateResult();
-            calculateResult.printOrder(users.get(0).getName(), lanches.get(0).getName(), users.get(0).getCpf());
+            calculateResult.printOrder(users.get(0).getName(), Integer.parseInt(String.valueOf(users.get(0).getCpf())));
         });
 
     }

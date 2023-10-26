@@ -11,7 +11,7 @@ public class RestaurantPlace {
     public RestaurantPlace(boolean visibility){
         Window restaurantPlace = new Window("Restaurant Place");
         Label image = new Label(0,0,500, 480);
-        image.setIcon(new ImageIcon("C://Users//ct67ca//Desktop//javaDelivert//deliveryJava//img//frame_restaurantplace.png"));
+        image.setIcon(new ImageIcon("C://Users//dsadm//Desktop//javaDelivery//deliveryJava//img//frame_restaurantplace.png"));
         Button btnAddFood = new Button("Add food", 133, 137, 233, 53);
         Button btnShowMenu = new Button("Show Menu", 133, 229, 233, 53);
         Button btnRemoveFood = new Button("Remove Food", 133, 321, 233, 53);

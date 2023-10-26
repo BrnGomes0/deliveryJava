@@ -18,7 +18,7 @@ public class RemoveFood {
     public RemoveFood(boolean visibility){
         Window removeFood = new Window("Remove Food");
         Label image = new Label(0,0,500, 480);
-        image.setIcon(new ImageIcon("C://Users//ct67ca//Desktop//javaDelivert//deliveryJava//img//frame_removefood.png"));
+        image.setIcon(new ImageIcon("C://Users//dsadm//Desktop//javaDelivery//deliveryJava//img//frame_removefood.png"));
         Input inputId = new Input(112, 157, 275, 38);
         Button btnRemoveFood = new Button("Remove", 170, 255, 159, 41);
         Button btnBack = new Button("<", 400, 16, 56, 56);
